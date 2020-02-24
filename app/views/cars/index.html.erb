@@ -1,0 +1,9 @@
+<h1>Cars Index</h1>
+
+<ul>
+  <% @cars.each do |car| %>
+    <li><%= car.attached_pics %></li>
+    <li><%= car.model %></li>
+    <li><%= link_to "", car_path(car), class: "fas fa-info-circle" %></li>
+  <% end %>
+</ul>
