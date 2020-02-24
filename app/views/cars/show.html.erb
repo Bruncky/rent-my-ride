@@ -1,0 +1,13 @@
+<h1>@car.model</h1>
+
+<%= image_tag @car.attached_pics, width: 400, height: 300, crop: :fill %>
+
+<p>Description: <%= @car.description %></p>
+<p>Description: <%= @car.location %></p>
+<p>Description: <%= @car.price %></p>
+<p>Description: <%= @car.horsepower %></p>
+
+<%= link_to "Back", root_path, class: "btn btn-primary" %>
+
+
+

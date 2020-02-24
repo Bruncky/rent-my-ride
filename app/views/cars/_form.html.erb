@@ -1,0 +1,19 @@
+<%= link_to "Back", root_path, class: "btn btn-primary" %>
+
+<%= simple_form_for (@car) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <%= f.input :model %>
+    <%= f.input :description %>
+    <%= f.input :location %>
+    <%= f.input :price %>
+    <%= f.input :horsepower %>
+    <%= f.input :attached_pics, as: :file %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit %>
+  </div>
+<% end %>
