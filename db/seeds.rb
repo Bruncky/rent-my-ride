@@ -9,7 +9,7 @@ require 'faker'
 10.times do
   User.new({
     email: Faker::Internet.email(domain: 'gmail'),
-    encrypted_password: Faker::Internet.password(min_length: 10, max_length: 20),
+    password: Faker::Internet.password(min_length: 10, max_length: 20),
     name: Faker::Name.name,
     age: Faker::Number.between(from: 20, to: 70),
     address: Faker::Address.street_address
