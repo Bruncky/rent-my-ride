@@ -28,4 +28,45 @@ require 'faker'
 
   car.user = user
   car.save!
+
 end
+
+User.create!({
+  email: "brunobrunckhorst@gmail.com",
+  password: "DsRSu90wAD287$",
+  name: "Bruno Brunckhorst",
+  age: "2/12/1993",
+  address: "Hafenplatz 5",
+  city: "Berlin",
+  zip: "10963"
+})
+
+User.create!({
+  email: "tim@gmail.com",
+  password: "123456",
+  name: "Tim",
+  age: "1/1/1998",
+  address: "Timstrasse 1",
+  city: "Berlin",
+  zip: "10963"
+})
+
+User.create!({
+  email: "patrick@gmail.com",
+  password: "123456",
+  name: "Patrick",
+  age: "1/1/1986",
+  address: "Patrickstrasse 1",
+  city: "Berlin",
+  zip: "10963"
+})
+
+User.create!({
+  email: "finn@gmail.com",
+  password: "123456",
+  name: "Finn",
+  age: "1/1/1995",
+  address: "Finnstrasse 1",
+  city: "Berlin",
+  zip: "10963"
+})
