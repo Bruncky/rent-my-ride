@@ -11,6 +11,7 @@ class BookingsController < ApplicationController
 
 
   def new
+    @car = set_car
     @booking = Booking.new
   end
 
@@ -19,7 +20,7 @@ class BookingsController < ApplicationController
     @booking.car = set_car
     @booking.user = current_user
     if @booking.save
-      redirect_to booking_path
+      redirect_to booking_path(@booking)
     else
       render :new
     end
@@ -33,7 +34,7 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-      bookings.require(:booking).permit(:start)
+      bookings.require(:booking).permit(:start_date, :end_date)
   end
 
   def set_car
