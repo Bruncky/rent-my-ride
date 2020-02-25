@@ -2,7 +2,7 @@
 
 <ul style="list-style: none">
   <% @cars.each do |car| %>
-    <li><%= cl_image_tag car.attached_pics.key, width: 400, height: 300, crop: :fill %></li>
+    <li><%= cl_image_tag car.photo.key, width: 400, height: 300, crop: :fill %></li>
     <li><%= car.model %></li>
     <li><%= car.location %></li>
     <li><%= car.price %></li>
