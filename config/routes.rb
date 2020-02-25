@@ -9,5 +9,9 @@ Rails.application.routes.draw do
     resources :bookings, only: [:index, :new, :create]
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-    resources :bookings, only: [:show, :destroy]
+  resources :bookings, only: [:index, :show, :destroy, :new, :create]
+
+  namespace :owner do
+    resources :cars, only: [:index]
+  end
 end
