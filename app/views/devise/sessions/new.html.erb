@@ -1,4 +1,7 @@
-<div class="py-5 container">
+<div class="container py-3">
+  <p>Sign in</p>
+</div>
+<div class="py-3 container">
 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="form-inputs">
     <%= f.input :email,
