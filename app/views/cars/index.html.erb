@@ -1,9 +1,16 @@
-<h1>Cars Index</h1>
+<div class="container">
+  <div class="row">
+    <% @cars.each do |car| %>
+      <div class="col-lg-3 col-md-6 col-12 py-3">
+      <div class="card rounded">
+      <%= image_tag car.attached_pics, class: "card-img-top" %>
+      <div class="card-body"><%= car.model %>
+      <%= link_to "", car_path(car), class: "fas fa-info-circle" %>
+    </div>
+    </div>
+    </div>
+    <% end %>
+  </div>
+</div>
 
-<ul style="list-style: none">
-  <% @cars.each do |car| %>
-    <li><%= image_tag car.attached_pics, width: 400, height: 300, crop: :fill %></li>
-    <li><%= car.model %></li>
-    <li><%= link_to "", car_path(car), class: "fas fa-info-circle" %></li>
-  <% end %>
-</ul>
+
