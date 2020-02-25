@@ -1,5 +1,4 @@
-<%= link_to "Back", root_path, class: "btn btn-primary" %>
-
+<div class="container py-3" style="height: 100vh">
 <%= simple_form_for (@car) do |f| %>
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
@@ -10,10 +9,17 @@
     <%= f.input :location %>
     <%= f.input :price %>
     <%= f.input :horsepower %>
+    <label class="btn btn-light">
+    Upload a Picture!
+    <span style="display:none;">
     <%= f.input :photo, as: :file %>
+    </span>
+    </label>
   </div>
 
   <div class="form-actions">
-    <%= f.submit %>
+    <%= f.submit "Make your ride availible", class: "btn btn-primary my-4" %>
   </div>
 <% end %>
+<%= link_to "Back", root_path, class: "btn btn-light" %>
+</div>
