@@ -15,7 +15,7 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @booking.new(booking_params)
+    @booking = Booking.new(booking_params)
     @booking.car = set_car
     @booking.user = current_user
     if @booking.save
