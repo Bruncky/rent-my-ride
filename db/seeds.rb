@@ -12,7 +12,9 @@ require 'faker'
     password: Faker::Internet.password(min_length: 10, max_length: 20),
     name: Faker::Name.name,
     age: Faker::Number.between(from: 20, to: 70),
-    address: Faker::Address.street_address
+    address: Faker::Address.street_address,
+    city: Faker::Address.city,
+    zip: Faker::Address.zip
   })
 
   car = Car.new({
