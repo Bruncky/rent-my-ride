@@ -1,3 +1,7 @@
+.navbar {
+  position: sticky;
+  top: 0vh;
+}
 .navbar-lewagon {
   justify-content: space-between;
   background: rgba(255,255,255,0.2);
@@ -11,5 +15,5 @@
   height: 3vh;
 }
 .navbar-toggler{
-  background-color: white;
+  background-color: rgba(255,255,255,0.5);
 }
