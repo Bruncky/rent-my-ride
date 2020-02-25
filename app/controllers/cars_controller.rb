@@ -1,4 +1,6 @@
 class CarsController < ApplicationController
+  before_action :authenticate_user!, only: %i[create]
+
   before_action :set_car, only: [:show, :destroy]
 
   def index
