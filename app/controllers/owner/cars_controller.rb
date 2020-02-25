@@ -1,6 +1,12 @@
 class Owner::CarsController < ApplicationController
   def index
-    # @cars = Car.where(user: current_user)
     @cars = current_user.cars
   end
+
+  def destroy
+    @car = Car.find(params[:id])
+    @car.destroy
+    redirect_to owner_cars_path
+  end
 end
+
