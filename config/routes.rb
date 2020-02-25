@@ -3,8 +3,6 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  resources :users, only: %i[index show new create edit update]
-
   resources :cars, only: [:new, :create, :index, :show] do
     resources :bookings, only: [:new, :create]
   end
