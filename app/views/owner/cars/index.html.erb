@@ -4,7 +4,7 @@
 
   <% if @cars.first %>
     <% @cars.each do |car| %>
-      <li><%= image_tag car.attached_pics, width: 400, height: 300, crop: :fill %></li>
+      <li><%= cl_image_tag car.attached_pics.key, width: 400, height: 300, crop: :fill %></li>
       <li><%= car.model %></li>
       <li><%= car.location %></li>
       <li><%= car.price %></li>
@@ -22,4 +22,4 @@
   <% end %>
 </ul>
 
-
+<%= link_to "Add a car", new_car_path, class: "btn btn-info" %>
