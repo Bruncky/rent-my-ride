@@ -12,7 +12,7 @@
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
           <%= link_to "See my Cars", owner_cars_path, class: "dropdown-item" %>
-          <%= link_to "My Rentals", "#", class: "dropdown-item" %>
+          <%= link_to "My Rentals", user_path(current_user), class: "dropdown-item" %>
           <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           <%= image_tag "https://res.cloudinary.com/dbqegklxb/image/upload/v1582654793/yNhccg5Y5e8PXX4ySaX8hahk.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': true %>
           </div>
