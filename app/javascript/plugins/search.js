@@ -4,5 +4,5 @@ submit.addEventListener('click', (event) => {
   event.preventDefault();
 
   const location = document.querySelector('#location-input').value
-  window.open(`/cars?=query${location}`,"_self")
+  window.open(`/cars?query=${location}`,"_self")
 });
