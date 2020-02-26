@@ -3,9 +3,9 @@
 <%= cl_image_tag @car.photo.key, width: 400, height: 300, crop: :fill %>
 
 <p>Description: <%= @car.description %></p>
-<p>Description: <%= @car.location %></p>
-<p>Description: <%= @car.price %></p>
-<p>Description: <%= @car.horsepower %></p>
+<p>Location: <%= @car.location %></p>
+<p>Price: <%= @car.price %></p>
+<p>Horsepower: <%= @car.horsepower %></p>
 
 <%= link_to "Back", root_path, class: "btn btn-primary" %>
 <%= link_to "Rent", new_car_booking_path(@car), class: "btn btn-primary" %>
