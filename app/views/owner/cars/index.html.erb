@@ -8,7 +8,14 @@
     <li><%= car.price %></li>
     <li><%= car.description %></li>
     <li><%= car.horsepower %></li>
-    <% end %>
+
+    <% car.bookings.each do |booking| %>
+            <li><%= booking.user.name %></li>
+            <li>Start date: <%= booking.start_date %></li>
+            <li>End date: <%= booking.end_date %></li>
+        <% end %>
+      <%= link_to "Delete car", owner_car_path(car), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-primary m-3" %>
+  <% end %>
 </ul>
 
 <%= link_to "Add a car", new_car_path, class: "btn btn-info" %>
