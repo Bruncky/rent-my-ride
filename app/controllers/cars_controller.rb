@@ -11,6 +11,7 @@ class CarsController < ApplicationController
         lat: car.latitude,
         lng: car.longitude
       }
+    end
   end
 
   def show
