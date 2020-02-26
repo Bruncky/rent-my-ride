@@ -1,21 +1,29 @@
-<h1>All my Cars</h1>
+<div class="container py-3">
+<p>All your cars</p>
+</div>
 
-<ul style="list-style: none">
-  <% @cars.each do |car| %>
-    <li><%= cl_image_tag car.photo.key, width: 400, height: 300, crop: :fill %></li>
-    <li><%= car.model %></li>
-    <li><%= car.location %></li>
-    <li><%= car.price %></li>
-    <li><%= car.description %></li>
-    <li><%= car.horsepower %></li>
-
-    <% car.bookings.each do |booking| %>
-            <li><%= booking.user.name %></li>
-            <li>Start date: <%= booking.start_date %></li>
-            <li>End date: <%= booking.end_date %></li>
-        <% end %>
-      <%= link_to "Delete car", owner_car_path(car), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-primary m-3" %>
-  <% end %>
-</ul>
-
-<%= link_to "Add a car", new_car_path, class: "btn btn-info" %>
+<div class="container">
+  <div class="row">
+    <% @cars.each do |car| %>
+        <div class="col-lg-3 col-md-6 col-12 py-3">
+            <div class="card rounded" style="background-color: rgba(245, 245, 245, 0.5)">
+                <%= cl_image_tag car.photo.key, class: "card-img-top" %>
+                    <div class="card-body">
+                      <ul style="list-style: none">
+                      <li><strong>Model: </strong><%= car.model %></li>
+                      <br>
+                      <li><strong>Location: </strong><%= car.location %></li>
+                      <br>
+                      <li><strong>Price Per Day: </strong><%= car.price %></li>
+                      <br>
+                      <li><strong>Description: </strong>"<%= car.description %></li>
+                      <br>
+                      <li><strong>Horsepower: </strong><%= car.horsepower %></li>
+                      </ul>
+                    </div>
+            </div>
+        </div>
+    <% end %>
+  </div>
+<%= link_to "Add a car", new_car_path, class: "btn btn-primary" %>
+</div>
