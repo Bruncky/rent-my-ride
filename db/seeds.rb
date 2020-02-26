@@ -26,7 +26,7 @@ addresses = [
   "Checkpoint Charlie Berlin",
   "Krausenstrasse 62 Berlin",
   "Rudi-Dutschke-Strasse 26 Berlin",
-  "Friedrichstrasse 20 Berlin",
+  "Friedrichstrasse 45 Berlin",
   "Friedrichstrasse 40 Berlin",
   "Friedrichstrasse 10 Berlin",
   "Friedrichstrasse 70 Berlin"
