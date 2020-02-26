@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(version: 2020_02_25_173258) do
   create_table "cars", force: :cascade do |t|
     t.string "model"
     t.string "location"
+    t.string "attached_pics"
     t.integer "price"
     t.text "description"
     t.integer "horsepower"
