@@ -1,11 +1,15 @@
+<div class="container">
 <h1><%= @car.model %></h1>
+<div class="d-flex justify-content-center">
 
-<%= cl_image_tag @car.photo.key, width: 400, height: 300, crop: :fill %>
-
+<%= cl_image_tag @car.photo.key, width: 350, height: 250, crop: :fill %>
+</div>
+<div class="bg-light rounded my-3" style="opacity: 0.8;">
 <p>Description: <%= @car.description %></p>
 <p>Location: <%= @car.location %></p>
 <p>Price: <%= @car.price %></p>
 <p>Horsepower: <%= @car.horsepower %></p>
-
-<%= link_to "Back", root_path, class: "btn btn-primary" %>
+</div>
+<%= link_to "Back", root_path, class: "btn btn-light" %>
 <%= link_to "Rent", new_car_booking_path(@car), class: "btn btn-primary" %>
+</div>
