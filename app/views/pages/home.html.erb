@@ -5,6 +5,9 @@
   background-position: center;
   background-attachment: fixed;
 }</style>
+<%= content_for(:after_js) do %>
+  <%= javascript_pack_tag "search.js" %>
+<% end %>
 <div class="container mt-5" style="margin: auto;">
   <img src="https://res.cloudinary.com/dbqegklxb/image/upload/v1582629687/navlogo_fvms1n.png" alt="rent my ride logo" class="w-100">
     <form>
