@@ -7,7 +7,7 @@
 <div class="bg-light rounded my-3" style="opacity: 0.8;">
 <p>Description: <%= @car.description %></p>
 <p>Location: <%= @car.location %></p>
-<p>Price: <%= @car.price %></p>
+<p>Price per day: <strong><%= @car.price %></strong>€</p>
 <p>Horsepower: <%= @car.horsepower %></p>
 </div>
 <%= link_to "Back", root_path, class: "btn btn-light" %>

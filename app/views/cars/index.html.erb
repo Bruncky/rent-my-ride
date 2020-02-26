@@ -6,7 +6,7 @@
                 <%= cl_image_tag car.photo.key, height: 200, crop: :fit, class: "card-img-top"%>
                     <div class="card-body"><%= car.model %>
                         <p><strong><%= car.price %></strong> € per day</p>
-                        <%= link_to "", car_path(car), class: "fas fa-info-circle" %>
+                        <%= link_to "", car_path(car), class: "fas fa-key",style: "text-decoration: none; color: black" %>
                         <br>
                         <a href="#map">
                         <i class="fas fa-map-marker" style="text-decoration: none; color: black"></i>
