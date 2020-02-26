@@ -6,3 +6,13 @@
   text-align: center;
   font-family: 'Open Sans', sans-serif;
 }
+.mapboxgl-popup-close-button {
+    position: absolute !important;
+    right: 0 !important;
+    top: 0 !important;
+    border: 0 !important;
+    border-radius: 0 3px 0 10px !important;
+    cursor: pointer !important;
+    background-color: white !important;
+    z-index: 1 !important;
+}
