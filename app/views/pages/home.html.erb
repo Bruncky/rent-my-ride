@@ -1,2 +1,15 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="container">
+    <form>
+        <div class="form-row">
+                <div class="col-11">
+                    <input type="text" class="form-control" placeholder="Location" id="location-input">
+                </div>
+                <div class="col-1">
+                    <button type="submit" class="btn btn-primary" id="submit-button">Geocode!</button>
+                </div>
+        </div>
+    </form>
+    <div class="coordinates"></div>
+</div>
+
+<div id="map"></div>
