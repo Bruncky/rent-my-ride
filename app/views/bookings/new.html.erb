@@ -2,6 +2,14 @@
 <%= simple_form_for [@car, @booking]  do |f|%>
   <%= f.input :start_date, as: :string, input_html: {class: "datepicker"}%>
   <%= f.input :end_date, as: :string, input_html: {class: "datepicker"}%>
-  <%= f.submit "Send Inquiry", class: "btn btn-primary my-4"  %>
+  <%= f.submit "Send Inquiry", class: "changeit"  %>
 <% end %>
 </div>
+
+
+<!-- <script>
+  var timer = setTimeout(function() {
+      window.location='http://localhost:3000/users/12'
+  }, 5000);
+</script> -->
+
