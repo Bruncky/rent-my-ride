@@ -5,7 +5,7 @@ class CarsController < ApplicationController
 
   def index
     if params[:query].present?
-      sql_query = "location ILIKE :query"
+      sql_query = "location LIKE :query"
       @cars = Car.where(sql_query, query: "%#{params[:query]}%").geocoded
       markers
     else
