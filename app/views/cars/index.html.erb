@@ -2,7 +2,8 @@
   <div class="row">
     <% @cars.each do |car| %>
         <div class="col-lg-3 col-md-6 col-12 py-3">
-            <div class="card rounded">
+
+            <div class="card rounded" style="background-color: rgba(245, 245, 245, 0.5)>
                 <%= cl_image_tag car.photo, class: "card-img-top" %>
                     <div class="card-body"><%= car.model %>
                         <%= link_to "", car_path(car), class: "fas fa-info-circle" %>
