@@ -4,7 +4,15 @@ class CarsController < ApplicationController
   before_action :set_car, only: [:show, :destroy]
 
   def index
-    @cars = Car.all
+    @cars = Car.geocoded
+
+    @markers = @cars.map do |car|
+      {
+        lat: car.latitude,
+        lng: car.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { car: car })
+      }
+    end
   end
 
   def show

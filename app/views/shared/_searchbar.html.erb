@@ -1,0 +1,6 @@
+<%= simple_form_for @car do |form| %>
+    <div class="form-group">
+        <%= form.input :location, class: "form-control" %>
+        <%= form.submit "Search for cars", class: "btn btn-outline-primary" %>
+    </div>
+<% end %>
