@@ -19,7 +19,21 @@ pics = [
   "https://res.cloudinary.com/dbqegklxb/image/upload/v1582716928/dmBRo9qJe2ZbeCQ2WTnVNFd2.jpg",
 ]
 
+addresses = [
+  "Hafenplatz 5 Berlin",
+  "Moderssohnstrasse 60 Berlin",
+  "Leipziger strasse 46 Berlin",
+  "Checkpoint Charlie Berlin",
+  "Krausenstrasse 62 Berlin",
+  "Rudi-Dutschke-Strasse 26 Berlin",
+  "Friedrichstrasse 20 Berlin",
+  "Friedrichstrasse 40 Berlin",
+  "Friedrichstrasse 10 Berlin",
+  "Friedrichstrasse 70 Berlin"
+]
+
 i = 0
+
 10.times do
 
 
@@ -36,7 +50,7 @@ i = 0
   car = Car.new({
     model: Faker::Company.name,
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    location: Faker::Address.city,
+    location: addresses[i],
     price: Faker::Commerce.price(range: 10.0..200.0),
     horsepower: Faker::Number.between(from: 50, to: 500),
   })
