@@ -15,6 +15,11 @@ class CarsController < ApplicationController
   end
 
   def show
+    @marker = [{
+              lat: @car.latitude,
+              lng: @car.longitude,
+              infoWindow: render_to_string(partial: "info_window", locals: { car: @car })
+              }]
   end
 
   def new
