@@ -10,6 +10,15 @@
 <p>Price per day: <strong><%= @car.price %></strong>€</p>
 <p>Horsepower: <%= @car.horsepower %></p>
 </div>
+<div class="rounded border-dark"
+  id="map"
+  style="width: 100%;
+  height: 50vh;
+  margin: auto;
+  opacity: 0.8;"
+  data-markers="<%= @marker.to_json %>"
+  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+></div>
 <%= link_to "Back", root_path, class: "btn btn-light" %>
 <%= link_to "Rent", new_car_booking_path(@car), class: "btn btn-primary" %>
 </div>
