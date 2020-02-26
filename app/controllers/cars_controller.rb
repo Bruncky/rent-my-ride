@@ -4,14 +4,13 @@ class CarsController < ApplicationController
   before_action :set_car, only: [:show, :destroy]
 
   def index
-    @cars = Car.geocoded
-
-    @markers = @cars.map do |car|
-      {
-        lat: car.latitude,
-        lng: car.longitude,
-        infoWindow: render_to_string(partial: "info_window", locals: { car: car })
-      }
+    if params[:query].present?
+      sql_query = "location ILIKE :query"
+      @cars = Car.where(sql_query, query: "%#{params[:query]}%").geocoded
+      markers
+    else
+      @cars = Car.geocoded
+      markers
     end
   end
 
@@ -42,5 +41,15 @@ class CarsController < ApplicationController
 
   def car_params
     params.require(:car).permit(:model, :description, :horsepower, :location, :price, :photo)
+  end
+
+  def markers
+    @markers = @cars.map do |car|
+      {
+        lat: car.latitude,
+        lng: car.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { car: car })
+      }
+    end
   end
 end
