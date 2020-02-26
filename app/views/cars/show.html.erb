@@ -1,6 +1,6 @@
 <h1><%= @car.model %></h1>
 
-<%= cl_image_tag @car.photo, width: 400, height: 300, crop: :fill %>
+<%= cl_image_tag @car.photo.key, width: 400, height: 300, crop: :fill %>
 
 <p>Description: <%= @car.description %></p>
 <p>Description: <%= @car.location %></p>
