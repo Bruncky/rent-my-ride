@@ -58,7 +58,7 @@ i = 0
   car.user = user
 
   file = URI.open(pics[i])
-  car.photo.attach(io: file, filename: 'car.jpeg', content_type: 'image/jpg')
+  car.thumbnail.attach(io: file, filename: 'car.jpeg', content_type: 'image/jpg')
 
   car.save!
 
