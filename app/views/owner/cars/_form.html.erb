@@ -1,0 +1,32 @@
+<div class="container py-3" style="height: 100vh">
+<%= simple_form_for :update, method: :get, url :edit_owner_car_path do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <%= f.input :model %>
+    <%= f.input :description %>
+    <%= f.input :location %>
+    <%= f.input :price %>
+    <%= f.input :horsepower %>
+    <label class="btn btn-light">
+    Upload a thumbnail!
+    <span style="display:none;">
+    <%= f.input :thumbnail, as: :file %>
+    </span>
+    </label>
+    <label class="btn btn-light">
+    Add pictures to the gallery!
+    <span style="display:none;">
+    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+    </span>
+    </label>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit "Make your ride available", class: "btn btn-primary my-4" %>
+  </div>
+<% end %>
+<%= link_to "Back", root_path, class: "btn btn-light" %>
+</div>
+
