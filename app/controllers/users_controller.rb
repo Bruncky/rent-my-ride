@@ -28,6 +28,10 @@ class UsersController < ApplicationController
   # def update
   # end
 
+  def destroy
+    # @bookings = @user.bookings
+  end
+
   private
 
   def set_user
