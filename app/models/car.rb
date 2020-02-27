@@ -5,7 +5,8 @@ class Car < ApplicationRecord
   belongs_to :user
   has_many :bookings, dependent: :destroy
 
-  has_one_attached :photo
+  has_one_attached :thumbnail
+  has_many_attached :photos
 
   validates :model, presence: true
   validates :location, presence: true
