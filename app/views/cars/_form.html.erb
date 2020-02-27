@@ -18,7 +18,7 @@
     <label class="btn btn-light">
     Add pictures to the gallery!
     <span style="display:none;">
-    <%= f.input :photos, as: :file %>
+    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
     </span>
     </label>
   </div>
