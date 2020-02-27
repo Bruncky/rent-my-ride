@@ -4,9 +4,9 @@ class CarsController < ApplicationController
   before_action :set_car, only: [:show, :destroy]
 
   def index
-    if params[:query].present?
-      sql_query = "location LIKE :query"
-      @cars = Car.where(sql_query, query: "%#{params[:query]}%").geocoded
+    if params[:query].present? && params[:start_date].preset? && params[:end_date]
+      sql_query = "cars.location ILIKE :query AND bookings.start_date > :end_date AND bookings.end_date < :start_date"
+      @cars = Car.joins(:booking).where(sql_query, query: "%#{params[:query]}%", start_date: "#{params[:start_date]}", end_date: "#{params[:end_date]}").geocoded
       redirect_to root_path, notice: "No matches found" if @cars[0].nil?
       markers
     else
