@@ -20,6 +20,7 @@ class BookingsController < ApplicationController
     @booking.car = set_car
     @booking.user = current_user
     if @booking.save
+      sleep(8)
       redirect_to user_path(@booking.user)
     else
       render :new
@@ -29,6 +30,8 @@ class BookingsController < ApplicationController
   def destroy
     @booking = Booking.find(params[:id])
     @booking.destroy
+    sleep(8)
+    redirect_to user_path(current_user)
   end
 
   private
