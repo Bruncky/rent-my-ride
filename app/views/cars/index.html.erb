@@ -1,31 +1,49 @@
-<%= content_for(:after_js) do %>
-  <%= javascript_pack_tag "search.js" %>
-<% end %>
-<div class="container">
+<div class="d-flex">
+<div class="container" style="width: 70%; position: relative; margin-left: 0px;">
   <div class="row">
     <% @cars.each do |car| %>
-        <div class="col-lg-3 col-md-6 col-12 py-3">
-            <div class="card rounded" style="background-color: rgba(245, 245, 245, 0.5)">
-                <%= cl_image_tag car.thumbnail.key, height: 200, crop: :fit, class: "card-img-top"%>
+        <div class="col-lg-3 col-md-6 col-12 border-light cardcol">
+            <div class="card rounded" data-car-id="<%= car.id %>">
+                <%= cl_image_tag car.thumbnail.key, height: 100, class: "card-img-top"%>
                     <div class="card-body"><%= car.model %>
                         <p><strong><%= car.price %></strong> € per day</p>
-                        <%= link_to "", car_path(car), class: "fas fa-key",style: "text-decoration: none; color: black" %>
-                        <br>
-                        <a href="#map">
-                        <i class="fas fa-map-marker" style="text-decoration: none; color: black"></i>
-                        </a>
                       </div>
             </div>
         </div>
     <% end %>
-  </div>
 <div class="rounded border-dark"
   id="map"
-  style="width: 100%;
-  height: 50vh;
-  margin: auto;
+  style="width: 30%;
+  height: 100vh;
+  position: fixed;
+  top: 55px;
+  right: 0px;
+  margin: 0;
   opacity: 0.8;"
   data-markers="<%= @markers.to_json %>"
   data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
 ></div>
+  </div>
 </div>
+</div>
+
+<div class="cardbig hidden">
+    <% @cars.each do |car| %>
+            <div class="bg-light w-50 p-10 hidden" data-car-hidden-id="<%= car.id %>">
+                <%= cl_image_tag car.thumbnail.key, height: 100, class: "card-img-top"%>
+                    <div class="card-body"><%= car.model %>
+                        <p><strong><%= car.price %></strong> € per day</p>
+                        <p><%= car.description %> </p>
+                        <%= link_to "Rent this car", new_car_booking_path(car), class: "fas fa-key btn btn-primary",style: "color: white" %>
+                   </div>
+            </div>
+        </div>
+    <% end %>
+</div>
+
+<%= content_for(:after_js) do %>
+  <%= javascript_pack_tag "search.js" %>
+<% end %>
+<%= content_for(:after_js) do %>
+  <%= javascript_pack_tag "floatcard.js" %>
+<% end %>
