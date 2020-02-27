@@ -7,6 +7,7 @@ class CarsController < ApplicationController
     if params[:query].present?
       sql_query = "location ILIKE :query"
       @cars = Car.where(sql_query, query: "%#{params[:query]}%").geocoded
+      redirect_to root_path, notice: "No matches found" if @cars[0].nil?
       markers
     else
       @cars = Car.geocoded
