@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_26_104038) do
+ActiveRecord::Schema.define(version: 2020_02_27_101538) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(version: 2020_02_26_104038) do
     t.date "start_date"
     t.bigint "user_id"
     t.bigint "car_id"
-    t.boolean "confirmed", default: true
+    t.boolean "confirmed", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.date "end_date"
