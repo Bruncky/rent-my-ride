@@ -1,3 +1,6 @@
+<%= content_for(:after_js) do %>
+  <%= javascript_pack_tag "search.js" %>
+<% end %>
 <div class="container">
 <h1><%= @car.model %></h1>
 <div class="d-flex justify-content-center">
