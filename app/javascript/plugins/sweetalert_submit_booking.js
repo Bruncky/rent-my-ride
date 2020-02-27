@@ -1,13 +1,7 @@
 import Swal from 'sweetalert2'
 
-const submit = document.querySelector('#new_booking');
-submit.addEventListener('submit', (event) => {
-  // swal({
-  //   title: "Congratulations!",
-  //   text: "Your rental has been accepted!",
-  //   icon: "success",
-  //   button: "Sass it!",
-  // });
+const submit_booking = document.querySelector('#new_booking');
+submit_booking.addEventListener('submit', (event) => {
    Swal.fire({
     title: 'Congratulations, your rental has been accepted!',
     imageUrl: 'https://media.giphy.com/media/3ov9jWu7BuHufyLs7m/giphy.gif',
