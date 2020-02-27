@@ -1,11 +1,5 @@
 require 'faker'
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+
 pics = [
   "https://res.cloudinary.com/dbqegklxb/image/upload/v1582716953/7CfzycbUaRbfLWEaUxef5gtj.jpg",
   "https://res.cloudinary.com/dbqegklxb/image/upload/v1582716950/phu6H9bDRdbAhmXPFgnCbBTY.jpg",
@@ -59,6 +53,8 @@ i = 0
 
   file = URI.open(pics[i])
   car.thumbnail.attach(io: file, filename: 'car.jpeg', content_type: 'image/jpg')
+
+  car.photos.attach(io: pics)
 
   car.save!
 
