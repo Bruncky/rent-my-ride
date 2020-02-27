@@ -33,7 +33,7 @@
               <button type="button" class="close" aria-label="Close">
                   <span class="closecard" aria-hidden="true" data-close-hidden-id="<%= car.id %>">&times;</span>
                     </button>
-                <%= cl_image_tag car.thumbnail.key, height: 100, class: "card-img-top"%>
+                <%= cl_image_tag car.thumbnail.key, height: 300, class: "card-img-top"%>
                     <div class="card-body"><%= car.model %>
                         <p><strong><%= car.price %></strong> € per day</p>
                         <p><%= car.description %> </p>
