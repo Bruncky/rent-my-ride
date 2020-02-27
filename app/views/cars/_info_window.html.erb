@@ -2,9 +2,12 @@
   <div class="card-body">
     <p class="card-text">
       <%= car.model %>
+      <br>
       <%= car.location %>
+      <br>
       <strong><%= car.price %></strong> € per day
-      <%= link_to "", new_car_booking_path(car), class: "fas fa-key", style: "text-decoration: none; color: black"%>
+      <br>
+      <%= link_to " Rent this car", new_car_booking_path(car), class: "btn btn-primary",style: "color: white" %>
     </p>
   </div>
 
