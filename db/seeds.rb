@@ -13,13 +13,6 @@ pics = [
   "https://res.cloudinary.com/dbqegklxb/image/upload/v1582716928/dmBRo9qJe2ZbeCQ2WTnVNFd2.jpg",
 ]
 
-gallery = [
-  "https://res.cloudinary.com/dbqegklxb/image/upload/v1582716953/7CfzycbUaRbfLWEaUxef5gtj.jpg",
-  "https://res.cloudinary.com/dbqegklxb/image/upload/v1582716950/phu6H9bDRdbAhmXPFgnCbBTY.jpg",
-  "https://res.cloudinary.com/dbqegklxb/image/upload/v1582716947/fA9zj1HFyboq9iDjwM1FTnec.jpg",
-  "https://res.cloudinary.com/dbqegklxb/image/upload/v1582716944/ZiCs4sWsadmCn8F89kAxZAkW.jpg"
-  ]
-
 addresses = [
   "Hafenplatz 5 Berlin",
   "Moderssohnstrasse 60 Berlin",
@@ -61,7 +54,6 @@ i = 0
   file = URI.open(pics[i])
 
   car.thumbnail.attach(io: file, filename: 'car.jpeg', content_type: 'image/jpg')
-  gallery.each { |photo| car.photos.attach(io: URI.open(photo), filename: 'car.jpeg') }
 
   car.save!
 
