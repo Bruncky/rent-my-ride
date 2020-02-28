@@ -21,7 +21,7 @@
                       <li><strong>Price Per Day: </strong><%= booking.car.price %>€</li>
                       <br>
                       <li><strong>Booked for :</strong> </li>
-                      <li><strong><%= booking.start_date %> - <%= booking.end_date %></strong></li>
+                      <li><strong><%= booking.start_date.strftime("%d.%m.%y") %> - <%= booking.end_date.strftime("%d.%m.%y") %></strong></li>
                     </div>
                     <div class="row">
                         <p class="cardescription"><strong>Description: </strong>"<%= booking.car.description %>"</p>
