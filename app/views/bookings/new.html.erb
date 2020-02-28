@@ -1,11 +1,33 @@
-<div class="container py-3">
+<div class="container">
+  <div class="row">
+            <div class="bg-light rounded d-flex p-3" style="background-color: rgba(245, 245, 245, 0.5); margin: 50px auto auto auto;">
+                <%= cl_image_tag @car.thumbnail.key, height: 200, class: "" %>
+                    <div class="card-body">
+                      <ul style="list-style: none">
+                      <li><strong>Model: </strong><%= @car.model %></li>
+                      <br>
+                      <li><strong>Location: </strong><%= @car.location %></li>
+                      <br>
+                      <li><strong>Price Per Day: </strong><%= @car.price %>€</li>
+                    </div>
+                      <div class="row">
+                        <p class="cardescription"><strong>Description: </strong>"<%= @car.description %>"</p>
+                      </div>
+            </div>
+<div class="container">
+  <div style="position: relative; margin-top: 30px;">
 <%= simple_form_for [@car, @booking]  do |f|%>
   <%= f.input :start_date, as: :string, input_html: {class: "datepicker"}%>
   <%= f.input :end_date, as: :string, input_html: {class: "datepicker"}%>
-  <%= f.submit "Send Inquiry" %>
+  <label class="btn btn-primary">
+    Request rental!
+    <span style="display:none;">
+  <%= f.submit "" %>
+      </span>
+    </label>
 <% end %>
 </div>
-
+</div>
 <%= content_for(:after_js) do %>
   <%= javascript_pack_tag "sweetalert_submit_booking.js" %>
 <% end %>
