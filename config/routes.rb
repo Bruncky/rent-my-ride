@@ -11,6 +11,6 @@ Rails.application.routes.draw do
   resources :bookings, only: [:index, :show, :destroy, :new, :create]
 
   namespace :owner do
-    resources :cars, only: [:index, :destroy]
+    resources :cars, only: [:index, :edit, :update, :destroy]
   end
 end

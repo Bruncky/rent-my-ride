@@ -101,3 +101,27 @@
     opacity: 1;
   }
 }
+
+.card-body {
+  position: relative;
+}
+
+.fas {
+  color: slategrey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  opacity: 0.8;
+  font-weight: lighter;
+  font-size: x-large;
+  &:hover {
+    color: black;
+    text-decoration: none;
+    opacity: 1;
+  }
+}
