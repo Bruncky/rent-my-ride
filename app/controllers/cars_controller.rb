@@ -4,10 +4,19 @@ class CarsController < ApplicationController
   before_action :set_car, only: [:show, :destroy]
 
   def index
-    if params[:query].present?
-      sql_query = "location LIKE :query"
-      @cars = Car.where(sql_query, query: "%#{params[:query]}%").geocoded
-      redirect_to root_path, notice: "No matches found" if @cars[0].nil?
+    @cars = []
+    if params[:query].present? && params[:start_date].present? && params[:end_date].present?
+      sql_query = "cars.location ILIKE :query"
+      @query_cars = Car.where(sql_query, query: "#{params[:query]}")
+      Car.all.each do |car|
+        if car.bookings.empty?
+          @cars << car
+        else
+          car.bookings.each do |booking|
+            @cars << car if booking.start_date > params[:end_date] || booking.end_date < params[:start_date]
+          end
+        end
+      end
       markers
     else
       @cars = Car.geocoded
@@ -59,3 +68,7 @@ class CarsController < ApplicationController
     end
   end
 end
+
+# sql_query = "cars.location ILIKE :query AND (bookings.start_date > :end_date OR bookings.end_date < :start_date)"
+      # @cars = Car.includes(:bookings).where(sql_query, query: "#{params[:query]}", start_date: "#{params[:start_date]} 00:00:00", end_date: "#{params[:end_date]} 23:59:59").geocoded
+# bookings.start_date <= :end_date AND bookings.end_date >= :start_date)
