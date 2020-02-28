@@ -17,7 +17,7 @@ pics = [
 
 addresses = [
   "Hafenplatz 5 Berlin",
-  "Moderssohnstrasse 60 Berlin",
+  "Modersohnstrasse 60 Berlin",
   "Leipziger strasse 46 Berlin",
   "Checkpoint Charlie Berlin",
   "Krausenstrasse 62 Berlin",
