@@ -11,14 +11,9 @@ pics = [
   "https://res.cloudinary.com/dbqegklxb/image/upload/v1582716933/9SMBQiGHFieppkM2UHJYhFVi.jpg",
   "https://res.cloudinary.com/dbqegklxb/image/upload/v1582716930/VUoFCutjkJFS7G5c38ngMXki.jpg",
   "https://res.cloudinary.com/dbqegklxb/image/upload/v1582716928/dmBRo9qJe2ZbeCQ2WTnVNFd2.jpg",
+  "https://images.unsplash.com/photo-1565520651265-1148c3b277f4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80",
+  "https://images.unsplash.com/photo-1563831816793-3d32d7cc07d3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80"
 ]
-
-gallery = [
-  "https://res.cloudinary.com/dbqegklxb/image/upload/v1582716953/7CfzycbUaRbfLWEaUxef5gtj.jpg",
-  "https://res.cloudinary.com/dbqegklxb/image/upload/v1582716950/phu6H9bDRdbAhmXPFgnCbBTY.jpg",
-  "https://res.cloudinary.com/dbqegklxb/image/upload/v1582716947/fA9zj1HFyboq9iDjwM1FTnec.jpg",
-  "https://res.cloudinary.com/dbqegklxb/image/upload/v1582716944/ZiCs4sWsadmCn8F89kAxZAkW.jpg"
-  ]
 
 addresses = [
   "Hafenplatz 5 Berlin",
@@ -30,12 +25,14 @@ addresses = [
   "Friedrichstrasse 45 Berlin",
   "Friedrichstrasse 40 Berlin",
   "Friedrichstrasse 10 Berlin",
-  "Friedrichstrasse 70 Berlin"
+  "Friedrichstrasse 70 Berlin",
+  "Friedrichstrasse 42 Berlin",
+  "Friedrichstrasse 47 Berlin"
 ]
 
 i = 0
 
-10.times do
+12.times do
 
 
   user = User.create!({
@@ -61,7 +58,6 @@ i = 0
   file = URI.open(pics[i])
 
   car.thumbnail.attach(io: file, filename: 'car.jpeg', content_type: 'image/jpg')
-  gallery.each { |photo| car.photos.attach(io: URI.open(photo), filename: 'car.jpeg') }
 
   car.save!
 
