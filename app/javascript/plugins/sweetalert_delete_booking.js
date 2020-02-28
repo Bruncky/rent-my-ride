@@ -24,7 +24,7 @@ delete_booking.addEventListener('click', (event) => {
     if (result.value) {
       swalWithBootstrapButtons.fire(
         'Deleted!',
-        'Your file has been deleted.',
+        'Your booking has been cancelled.',
         'success'
       )
     } else if (
@@ -32,7 +32,7 @@ delete_booking.addEventListener('click', (event) => {
     ) {
       swalWithBootstrapButtons.fire(
         'Cancelled',
-        'Your imaginary file is safe :)',
+        'Your booking is safe :)',
         'error'
       )
     }
