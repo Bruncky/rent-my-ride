@@ -1,7 +1,7 @@
 class Owner::CarsController < ApplicationController
-  before_action :authenticate_user!, only: %i[edit update]
+  before_action :authenticate_user!, only: %i[edit update destroy]
 
-  before_action :set_car, only: [:update, :destroy]
+  before_action :set_car, only: [:edit, :update, :destroy]
 
   def index
     @cars = current_user.cars
@@ -12,8 +12,7 @@ class Owner::CarsController < ApplicationController
 
   def update
     if @car.update(car_params)
-      raise
-      redirect_to owner_car_path(current_user)
+      redirect_to owner_cars_path(current_user)
     else
       render :new
     end

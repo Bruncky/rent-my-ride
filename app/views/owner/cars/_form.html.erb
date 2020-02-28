@@ -1,5 +1,5 @@
 <div class="container py-3" style="height: 100vh">
-<%= simple_form_for :update, method: :get, url :edit_owner_car_path do |f| %>
+<%= simple_form_for [@owner, @car], url: owner_car_path(current_user) do |f| %>
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
