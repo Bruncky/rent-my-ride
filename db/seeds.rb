@@ -26,7 +26,7 @@ addresses = [
   "Friedrichstrasse 40 Berlin",
   "Friedrichstrasse 10 Berlin",
   "Friedrichstrasse 70 Berlin",
-  "Friedrichstrasse 42 Berlin",
+  "Krausenstrasse 50 Berlin",
   "Friedrichstrasse 47 Berlin"
 ]
 
