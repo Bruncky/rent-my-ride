@@ -19,10 +19,10 @@ class CarsController < ApplicationController
 
   def show
     @marker = [{
-              lat: @car.latitude,
-              lng: @car.longitude,
-              infoWindow: render_to_string(partial: "info_window", locals: { car: @car })
-              }]
+      lat: @car.latitude,
+      lng: @car.longitude,
+      infoWindow: render_to_string(partial: "info_window", locals: { car: @car })
+    }]
   end
 
   def new
@@ -65,10 +65,10 @@ class CarsController < ApplicationController
   def own_markers
     @location = request.location.coordinates
     @own_markers = {
-                    lat: @location[1],
-                    lng: @location[0],
-                    image_url: helpers.asset_url('mappin.png')
-                   }
+      lat: @location[0],
+      lng: @location[1],
+      image_url: helpers.asset_url('mappin.png')
+    }
   end
 
   def all_params
