@@ -8,4 +8,4 @@ submit.addEventListener('click', (event) => {
   const endDate = document.querySelector('#end_date').value
 
   window.open(`/cars?query=${location}&amp;start_date=${startDate}&amp;end_date=${endDate}`,"_self")
-}
+});
