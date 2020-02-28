@@ -8,8 +8,11 @@ class CarsController < ApplicationController
     if params[:query].present? && params[:start_date].present? && params[:end_date].present?
       all_params
       markers
+      own_markers
     elsif params[:query].present? && params[:start_date] == ""
       only_search
+      markers
+      own_markers
     else
       @cars = Car.geocoded
       markers
@@ -58,6 +61,16 @@ class CarsController < ApplicationController
         infoWindow: render_to_string(partial: "info_window", locals: { car: car })
       }
     end
+    @markers << own_markers
+  end
+
+  def own_markers
+    @location = [52.5072294, 13.3913326]
+    @own_markers = [{
+                    lat: @location[0],
+                    lng: @location[1],
+                    image_url: helpers.asset_url('mappin')
+                   }]
   end
 
   def all_params
@@ -73,6 +86,15 @@ class CarsController < ApplicationController
         end
       end
   end
+
+  # def own_markers
+  #   @location = [52.5072294, 13.3913326]
+  #   @own_markers = [{
+  #                   lat: @location[0],
+  #                   lng: @location[1],
+  #                   image_url: helpers.asset_url('mappin.png')
+  #                  }]
+  # end
 
   def only_search
     sql_query = "location ILIKE :query"
