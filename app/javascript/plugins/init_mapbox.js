@@ -25,14 +25,11 @@ const initMapbox = () => {
       const element = document.createElement('div');
         element.className = 'marker';
         element.style.backgroundImage = `url('${marker.image_url}')`;
-        element.style.backgroundSize = 'cover';
-        element.style.width = '50px';
-        element.style.height = '50px';
-
-      new mapboxgl.Marker()
-        .setLngLat([ marker.lng, marker.lat ])
-        .setPopup(popup)
-        .addTo(map);
+        element.style.backgroundSize = 'contain';
+        element.style.backgroundPosition = 'center';
+        element.style.top = '-1px';
+        element.style.width = '40px';
+        element.style.height = '65px';
 
       new mapboxgl.Marker(element)
         .setLngLat([ marker.lng, marker.lat ])

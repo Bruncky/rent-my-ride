@@ -56,7 +56,8 @@ class CarsController < ApplicationController
       {
         lat: car.latitude,
         lng: car.longitude,
-        infoWindow: render_to_string(partial: "info_window", locals: { car: car })
+        infoWindow: render_to_string(partial: "info_window", locals: { car: car }),
+        image_url: helpers.asset_url('mappin.png')
       }
     end
     @markers << own_markers
@@ -67,7 +68,7 @@ class CarsController < ApplicationController
     @own_markers = {
       lat: @location[0],
       lng: @location[1],
-      image_url: helpers.asset_url('mappin.png')
+      image_url: helpers.asset_url('mappin_blue.png')
     }
   end
 
@@ -85,31 +86,8 @@ class CarsController < ApplicationController
       end
   end
 
-  # def own_markers
-  #   @location = [52.5072294, 13.3913326]
-  #   @own_markers = [{
-  #                   lat: @location[0],
-  #                   lng: @location[1],
-  #                   image_url: helpers.asset_url('mappin.png')
-  #                  }]
-  # end
-
   def only_search
     sql_query = "location ILIKE :query"
     @cars = Car.where(sql_query, query: "%#{params[:query]}%")
   end
-
-  # sql_query = "title ILIKE :query OR syllabus ILIKE :query"
-  #       @movies = Movie.where(sql_query, query: "%#{params[:query]}%")
 end
-
-
-
-
-
-
-
-
-# sql_query = "cars.location ILIKE :query AND (bookings.start_date > :end_date OR bookings.end_date < :start_date)"
-      # @cars = Car.includes(:bookings).where(sql_query, query: "#{params[:query]}", start_date: "#{params[:start_date]} 00:00:00", end_date: "#{params[:end_date]} 23:59:59").geocoded
-# bookings.start_date <= :end_date AND bookings.end_date >= :start_date)
