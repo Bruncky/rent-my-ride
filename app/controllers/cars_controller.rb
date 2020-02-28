@@ -57,18 +57,19 @@ class CarsController < ApplicationController
         lat: car.latitude,
         lng: car.longitude,
         infoWindow: render_to_string(partial: "info_window", locals: { car: car }),
-        image_url: helpers.asset_url('mappin.png')
+        image_url: helpers.asset_url('custom_marker.png')
       }
     end
-    @markers << own_markers
+    @markers << user_marker
   end
 
-  def own_markers
-    @location = request.location.coordinates
-    @own_markers = {
-      lat: @location[0],
-      lng: @location[1],
-      image_url: helpers.asset_url('mappin_blue.png')
+  def user_marker
+    location = request.location.coordinates
+
+    user_marker = {
+      lat: location[0],
+      lng: location[1],
+      image_url: helpers.asset_url('custom_marker_blue.png')
     }
   end
 
