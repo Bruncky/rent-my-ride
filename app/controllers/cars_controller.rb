@@ -63,10 +63,10 @@ class CarsController < ApplicationController
   end
 
   def own_markers
-    @location = [52.5072294, 13.3913326]
+    @location = request.location.coordinates
     @own_markers = {
-                    lat: @location[0],
-                    lng: @location[1],
+                    lat: @location[1],
+                    lng: @location[0],
                     image_url: helpers.asset_url('mappin')
                    }
   end
