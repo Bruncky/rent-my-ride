@@ -8,6 +8,7 @@
         <div class="col-lg-3 col-md-6 col-12 py-3">
             <div class="card rounded" style="background-color: rgba(245, 245, 245, 0.5)">
                 <%= cl_image_tag car.thumbnail.key, class: "card-img-top" %>
+                <%= link_to "+", owner_car_path(car), method: :delete, class: "card-remove-link" %>
                     <div class="card-body">
                       <ul style="list-style: none">
                       <li><strong>Model: </strong><%= car.model %></li>
@@ -20,6 +21,7 @@
                       <br>
                       <li><strong>Horsepower: </strong><%= car.horsepower %></li>
                       </ul>
+                      <%= link_to "", edit_owner_car_path(car), class: "fas fa-edit" %>
                     </div>
             </div>
         </div>

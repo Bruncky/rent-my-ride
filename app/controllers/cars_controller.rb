@@ -34,7 +34,7 @@ class CarsController < ApplicationController
     @car.user = current_user
 
     if @car.save
-      redirect_to root_path
+      redirect_to owner_cars_path
     else
       render :new
     end
