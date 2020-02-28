@@ -22,7 +22,7 @@
           <li><strong><%= booking.start_date.strftime("%d.%m.%y") %> - <%= booking.end_date.strftime("%d.%m.%y") %></strong></li>
         </div>
       <div class="row">
-        <p class="cardescription"><strong>Description: </strong>"<%= booking.car.description %>"</p>
+        <p class="cardescription border-left pl-1"><strong>Description: </strong>"<%= booking.car.description %>"</p>
       </div>
       <div class="row">
         <%= link_to "", booking_path(booking), method: :delete, class: "fas fa-ban card-remove-link col-1" %>
