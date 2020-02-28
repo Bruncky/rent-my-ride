@@ -11,6 +11,8 @@ pics = [
   "https://res.cloudinary.com/dbqegklxb/image/upload/v1582716933/9SMBQiGHFieppkM2UHJYhFVi.jpg",
   "https://res.cloudinary.com/dbqegklxb/image/upload/v1582716930/VUoFCutjkJFS7G5c38ngMXki.jpg",
   "https://res.cloudinary.com/dbqegklxb/image/upload/v1582716928/dmBRo9qJe2ZbeCQ2WTnVNFd2.jpg",
+  "https://images.unsplash.com/photo-1565520651265-1148c3b277f4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80",
+  "https://images.unsplash.com/photo-1563831816793-3d32d7cc07d3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80"
 ]
 
 addresses = [
@@ -23,12 +25,14 @@ addresses = [
   "Friedrichstrasse 45 Berlin",
   "Friedrichstrasse 40 Berlin",
   "Friedrichstrasse 10 Berlin",
-  "Friedrichstrasse 70 Berlin"
+  "Friedrichstrasse 70 Berlin",
+  "Friedrichstrasse 42 Berlin",
+  "Friedrichstrasse 47 Berlin"
 ]
 
 i = 0
 
-10.times do
+12.times do
 
 
   user = User.create!({
