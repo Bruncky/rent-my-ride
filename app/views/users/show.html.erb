@@ -12,7 +12,7 @@
     <%= cl_image_tag booking.car.thumbnail.key, height: 200, crop: :fit, class: "card-img-top"%>
     <%= link_to "+", booking_path(booking), method: :delete, class: "card-remove-link" %>
     <div class="card-body"><%= booking.car.model %>
-      <p><%= booking.start_date %> - <%= booking.end_date %></p>
+      <p><%= booking.start_date.strftime("%d.%m.%y") %> - <%= booking.end_date.strftime("%d.%m.%y") %></p>
       <%= link_to "", car_path(booking.car), class: "fas fa-info-circle" %>
     </div>
   </div>
