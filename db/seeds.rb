@@ -1,5 +1,7 @@
 require 'faker'
 
+Car.destroy_all
+
 pics = [
   "https://res.cloudinary.com/dbqegklxb/image/upload/v1583010772/ZbKAbjj7A2yGm65o5jRcLcnA.jpg",
   "https://res.cloudinary.com/dbqegklxb/image/upload/v1582929355/piofx3cyP5fQBSPFqkd2nYFg.jpg",
