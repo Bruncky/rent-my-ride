@@ -1,18 +1,18 @@
 require 'faker'
 
 pics = [
-  "https://res.cloudinary.com/dbqegklxb/image/upload/v1582716953/7CfzycbUaRbfLWEaUxef5gtj.jpg",
-  "https://res.cloudinary.com/dbqegklxb/image/upload/v1582716950/phu6H9bDRdbAhmXPFgnCbBTY.jpg",
-  "https://res.cloudinary.com/dbqegklxb/image/upload/v1582716947/fA9zj1HFyboq9iDjwM1FTnec.jpg",
-  "https://res.cloudinary.com/dbqegklxb/image/upload/v1582716944/ZiCs4sWsadmCn8F89kAxZAkW.jpg",
-  "https://res.cloudinary.com/dbqegklxb/image/upload/v1582716940/2WYYBv169EREP5Yw5QBZbAmy.jpg",
-  "https://res.cloudinary.com/dbqegklxb/image/upload/v1582716937/qohLigvSrBNKT89BkeaTDp4x.jpg",
-  "https://res.cloudinary.com/dbqegklxb/image/upload/v1582716935/fpcryuFCnM6xs9bsYpfthSYY.jpg",
-  "https://res.cloudinary.com/dbqegklxb/image/upload/v1582716933/9SMBQiGHFieppkM2UHJYhFVi.jpg",
-  "https://res.cloudinary.com/dbqegklxb/image/upload/v1582716930/VUoFCutjkJFS7G5c38ngMXki.jpg",
-  "https://res.cloudinary.com/dbqegklxb/image/upload/v1582716928/dmBRo9qJe2ZbeCQ2WTnVNFd2.jpg",
-  "https://images.unsplash.com/photo-1565520651265-1148c3b277f4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80",
-  "https://images.unsplash.com/photo-1563831816793-3d32d7cc07d3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80"
+  "https://res.cloudinary.com/dbqegklxb/image/upload/v1583010772/ZbKAbjj7A2yGm65o5jRcLcnA.jpg",
+  "https://res.cloudinary.com/dbqegklxb/image/upload/v1582929355/piofx3cyP5fQBSPFqkd2nYFg.jpg",
+  "https://res.cloudinary.com/dbqegklxb/image/upload/v1582929350/1dFJUTpF22nqTKdpUZnCrERc.jpg",
+  "https://res.cloudinary.com/dbqegklxb/image/upload/v1582929338/P3qYyLeXzcB1tggNuxfV2NJv.jpg",
+  "https://res.cloudinary.com/dbqegklxb/image/upload/v1582929333/7xjUw6LFuFVUNjiuxoFuQWnm.jpg",
+  "https://res.cloudinary.com/dbqegklxb/image/upload/v1582929330/ZPQ8LwZJQJKFpWGFqU1n659b.jpg",
+  "https://res.cloudinary.com/dbqegklxb/image/upload/v1582929326/bsFibwhHtmzRZ2SRLqZqCjVb.jpg",
+  "https://res.cloudinary.com/dbqegklxb/image/upload/v1582929007/RrJHqH8UuNZW4ybjsU9nJra1.jpg",
+  "https://res.cloudinary.com/dbqegklxb/image/upload/v1582929057/VkgmFu3Ea7m5nf3EZkXLMRv3.jpg",
+  "https://res.cloudinary.com/dbqegklxb/image/upload/v1582929083/61nURrTotjzSWZoNLdqYGkqJ.jpg",
+  "https://res.cloudinary.com/dbqegklxb/image/upload/v1582929051/vAgzwx6R3Gv8jh6E6Vg8HdH3.jpg",
+  "https://res.cloudinary.com/dbqegklxb/image/upload/v1582929047/4jXrYwrYrc4HvnC4nR8nMjEe.jpg",
 ]
 
 addresses = [
@@ -65,42 +65,42 @@ i = 0
 
 end
 
-User.create!({
-  email: "brunobrunckhorst@gmail.com",
-  password: "DsRSu90wAD287$",
-  name: "Bruno Brunckhorst",
-  age: "2/12/1993",
-  address: "Hafenplatz 5",
-  city: "Berlin",
-  zip: "10963"
-})
+# User.create!({
+#   email: "brunobrunckhorst@gmail.com",
+#   password: "DsRSu90wAD287$",
+#   name: "Bruno Brunckhorst",
+#   age: "2/12/1993",
+#   address: "Hafenplatz 5",
+#   city: "Berlin",
+#   zip: "10963"
+# })
 
-User.create!({
-  email: "tim@gmail.com",
-  password: "123456",
-  name: "Tim",
-  age: "1/1/1998",
-  address: "Timstrasse 1",
-  city: "Berlin",
-  zip: "10963"
-})
+# User.create!({
+#   email: "tim@gmail.com",
+#   password: "123456",
+#   name: "Tim",
+#   age: "1/1/1998",
+#   address: "Timstrasse 1",
+#   city: "Berlin",
+#   zip: "10963"
+# })
 
-User.create!({
-  email: "patrick@gmail.com",
-  password: "123456",
-  name: "Patrick",
-  age: "1/1/1986",
-  address: "Patrickstrasse 1",
-  city: "Berlin",
-  zip: "10963"
-})
+# User.create!({
+#   email: "patrick@gmail.com",
+#   password: "123456",
+#   name: "Patrick",
+#   age: "1/1/1986",
+#   address: "Patrickstrasse 1",
+#   city: "Berlin",
+#   zip: "10963"
+# })
 
-User.create!({
-  email: "finn@gmail.com",
-  password: "123456",
-  name: "Finn",
-  age: "1/1/1995",
-  address: "Finnstrasse 1",
-  city: "Berlin",
-  zip: "10963"
-})
+# User.create!({
+#   email: "finn@gmail.com",
+#   password: "123456",
+#   name: "Finn",
+#   age: "1/1/1995",
+#   address: "Finnstrasse 1",
+#   city: "Berlin",
+#   zip: "10963"
+# })
