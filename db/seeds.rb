@@ -3,20 +3,6 @@ require 'faker'
 Car.destroy_all
 
 pics = [
-<<<<<<< HEAD
-  "https://res.cloudinary.com/dbqegklxb/image/upload/v1583010772/ZbKAbjj7A2yGm65o5jRcLcnA.jpg",
-  "https://res.cloudinary.com/dbqegklxb/image/upload/v1582929355/piofx3cyP5fQBSPFqkd2nYFg.jpg",
-  "https://res.cloudinary.com/dbqegklxb/image/upload/v1582929350/1dFJUTpF22nqTKdpUZnCrERc.jpg",
-  "https://res.cloudinary.com/dbqegklxb/image/upload/v1582929338/P3qYyLeXzcB1tggNuxfV2NJv.jpg",
-  "https://res.cloudinary.com/dbqegklxb/image/upload/v1582929333/7xjUw6LFuFVUNjiuxoFuQWnm.jpg",
-  "https://res.cloudinary.com/dbqegklxb/image/upload/v1582929330/ZPQ8LwZJQJKFpWGFqU1n659b.jpg",
-  "https://res.cloudinary.com/dbqegklxb/image/upload/v1582929326/bsFibwhHtmzRZ2SRLqZqCjVb.jpg",
-  "https://res.cloudinary.com/dbqegklxb/image/upload/v1582929007/RrJHqH8UuNZW4ybjsU9nJra1.jpg",
-  "https://res.cloudinary.com/dbqegklxb/image/upload/v1582929057/VkgmFu3Ea7m5nf3EZkXLMRv3.jpg",
-  "https://res.cloudinary.com/dbqegklxb/image/upload/v1582929083/61nURrTotjzSWZoNLdqYGkqJ.jpg",
-  "https://res.cloudinary.com/dbqegklxb/image/upload/v1582929051/vAgzwx6R3Gv8jh6E6Vg8HdH3.jpg",
-  "https://res.cloudinary.com/dbqegklxb/image/upload/v1582929047/4jXrYwrYrc4HvnC4nR8nMjEe.jpg",
-=======
   "https://images.unsplash.com/photo-1524249403638-63d60df939eb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80",
   "https://images.unsplash.com/photo-1439158974188-fa4ebec31017?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80",
   "https://images.unsplash.com/photo-1532937645515-9778bfbb099a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1778&q=80",
@@ -29,7 +15,6 @@ pics = [
   "https://images.unsplash.com/photo-1510531699559-bdec36f840e0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80",
   "https://images.unsplash.com/photo-1565520651265-1148c3b277f4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80",
   "https://images.unsplash.com/photo-1563831816793-3d32d7cc07d3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80"
->>>>>>> bac323053c40f6a89d8fa3bac8b3e021f9d88da5
 ]
 
 addresses = [
