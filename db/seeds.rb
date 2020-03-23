@@ -1,5 +1,7 @@
 require 'faker'
 
+Car.destroy_all
+
 pics = [
   "https://images.unsplash.com/photo-1524249403638-63d60df939eb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80",
   "https://images.unsplash.com/photo-1439158974188-fa4ebec31017?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80",
@@ -65,42 +67,42 @@ i = 0
 
 end
 
-User.create!({
-  email: "brunobrunckhorst@gmail.com",
-  password: "DsRSu90wAD287$",
-  name: "Bruno Brunckhorst",
-  age: "2/12/1993",
-  address: "Hafenplatz 5",
-  city: "Berlin",
-  zip: "10963"
-})
+# User.create!({
+#   email: "brunobrunckhorst@gmail.com",
+#   password: "DsRSu90wAD287$",
+#   name: "Bruno Brunckhorst",
+#   age: "2/12/1993",
+#   address: "Hafenplatz 5",
+#   city: "Berlin",
+#   zip: "10963"
+# })
 
-User.create!({
-  email: "tim@gmail.com",
-  password: "123456",
-  name: "Tim",
-  age: "1/1/1998",
-  address: "Timstrasse 1",
-  city: "Berlin",
-  zip: "10963"
-})
+# User.create!({
+#   email: "tim@gmail.com",
+#   password: "123456",
+#   name: "Tim",
+#   age: "1/1/1998",
+#   address: "Timstrasse 1",
+#   city: "Berlin",
+#   zip: "10963"
+# })
 
-User.create!({
-  email: "patrick@gmail.com",
-  password: "123456",
-  name: "Patrick",
-  age: "1/1/1986",
-  address: "Patrickstrasse 1",
-  city: "Berlin",
-  zip: "10963"
-})
+# User.create!({
+#   email: "patrick@gmail.com",
+#   password: "123456",
+#   name: "Patrick",
+#   age: "1/1/1986",
+#   address: "Patrickstrasse 1",
+#   city: "Berlin",
+#   zip: "10963"
+# })
 
-User.create!({
-  email: "finn@gmail.com",
-  password: "123456",
-  name: "Finn",
-  age: "1/1/1995",
-  address: "Finnstrasse 1",
-  city: "Berlin",
-  zip: "10963"
-})
+# User.create!({
+#   email: "finn@gmail.com",
+#   password: "123456",
+#   name: "Finn",
+#   age: "1/1/1995",
+#   address: "Finnstrasse 1",
+#   city: "Berlin",
+#   zip: "10963"
+# })
