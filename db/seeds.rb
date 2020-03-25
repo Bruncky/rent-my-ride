@@ -14,7 +14,11 @@ pics = [
   "https://res.cloudinary.com/dbqegklxb/image/upload/v1584965870/FvRU6sG4jPMw68AfV79ncWSF.jpg",
   "https://res.cloudinary.com/dbqegklxb/image/upload/v1584965849/7FAwYk4CZK3JrLRhegKEdLTB.jpg",
   "https://res.cloudinary.com/dbqegklxb/image/upload/v1584965828/thKRcXtTePq46d3tF8emSUhM.jpg",
-  "https://res.cloudinary.com/dbqegklxb/image/upload/v1582929318/RwK6SwTmvEHvo45gBycg7oUo.jpg"
+  "https://res.cloudinary.com/dbqegklxb/image/upload/v1582929318/RwK6SwTmvEHvo45gBycg7oUo.jpg",
+  "https://res.cloudinary.com/dbqegklxb/image/upload/v1585137339/photo-1565985975612-3a33aa67353f_oqhq6g.jpg",
+  "https://res.cloudinary.com/dbqegklxb/image/upload/v1585137339/photo-1565346015502-bee2b63e735b_jyudem.jpg",
+  "https://res.cloudinary.com/dbqegklxb/image/upload/v1585137339/photo-1565294678301-bd57e84c7337_lvlbuu.jpg",
+  "https://res.cloudinary.com/dbqegklxb/image/upload/v1585137339/photo-1566218246201-db22c11310ad_hyvz3l.jpg"
 ]
 
 addresses = [
@@ -29,12 +33,16 @@ addresses = [
   "Friedrichstrasse 10 Berlin",
   "Friedrichstrasse 70 Berlin",
   "Krausenstrasse 50 Berlin",
-  "Friedrichstrasse 47 Berlin"
+  "Friedrichstrasse 47 Berlin",
+  "Leipziger strasse 43, Berlin",
+  "Invalidenstrasse 10, Berlin"
+  "Krausenstrasse 26, Berlin",
+  "Kastanienallee 36a, Berlin"
 ]
 
 i = 0
 
-12.times do
+16.times do
 
 
   user = User.create!({
@@ -49,7 +57,7 @@ i = 0
 
   car = Car.new({
     model: Faker::Company.name,
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    description: Faker::Vehicle.standard_specs,
     location: addresses[i],
     price: Faker::Commerce.price(range: 10.0..200.0),
     horsepower: Faker::Number.between(from: 50, to: 500),
