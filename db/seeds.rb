@@ -61,7 +61,7 @@ i = 0
   car = Car.new({
     model: Faker::Company.name,
     description: Faker::Vehicle.standard_specs,
-    location: "Kastanienallee 36a, Berlin",
+    location: addresses[i],
     price: Faker::Commerce.price(range: 10.0..200.0),
     horsepower: Faker::Number.between(from: 50, to: 500)
   })
