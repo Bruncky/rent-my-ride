@@ -61,14 +61,14 @@ i = 0
   car = Car.new({
     model: Faker::Company.name,
     description: Faker::Vehicle.standard_specs,
-    location: addresses[i],
+    location: "Kastanienallee 36a, Berlin",
     price: Faker::Commerce.price(range: 10.0..200.0),
-    horsepower: Faker::Number.between(from: 50, to: 500),
+    horsepower: Faker::Number.between(from: 50, to: 500)
   })
 
   car.user = user
 
-  file = URI.open('https://images.unsplash.com/photo-1565346015502-bee2b63e735b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1814&q=80')
+  file = URI.open('https://res.cloudinary.com/dbqegklxb/image/upload/v1585144789/car2_sds9rx.jpg')
 
   car.thumbnail.attach(io: file, filename: 'car.jpg', content_type: 'image/jpg')
 
