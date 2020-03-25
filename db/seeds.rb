@@ -68,7 +68,7 @@ i = 0
 
   car.user = user
 
-  file = URI.open('https://res.cloudinary.com/dbqegklxb/image/upload/v1585144789/car2_sds9rx.jpg')
+  file = URI.open(pics[i])
 
   car.thumbnail.attach(io: file, filename: 'car.jpg', content_type: 'image/jpg')
 
