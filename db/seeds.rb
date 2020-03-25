@@ -3,18 +3,18 @@ require 'faker'
 Car.destroy_all
 
 pics = [
-  "https://images.unsplash.com/photo-1524249403638-63d60df939eb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80",
-  "https://images.unsplash.com/photo-1439158974188-fa4ebec31017?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80",
-  "https://images.unsplash.com/photo-1532937645515-9778bfbb099a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1778&q=80",
-  "https://images.unsplash.com/photo-1506560411-58ae1f86da62?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80",
-  "https://images.unsplash.com/photo-1507218433416-313c96e07830?ixlib=rb-1.2.1&auto=format&fit=crop&w=1736&q=80",
-  "https://images.unsplash.com/photo-1521657142174-c7353dc830cd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1651&q=80",
-  "https://images.unsplash.com/photo-1516669207770-9451d52f0844?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1001&q=80",
-  "https://images.unsplash.com/photo-1504455637435-8d1a13cd8a93?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80",
-  "https://images.unsplash.com/photo-1533061652211-66aa2f608e10?ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80",
-  "https://images.unsplash.com/photo-1510531699559-bdec36f840e0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80",
-  "https://images.unsplash.com/photo-1565520651265-1148c3b277f4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80",
-  "https://images.unsplash.com/photo-1563831816793-3d32d7cc07d3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80"
+  "https://res.cloudinary.com/dbqegklxb/image/upload/v1584965878/WpPpnZMTF9QqFzRWhKhaky5i.jpg",
+  "https://res.cloudinary.com/dbqegklxb/image/upload/v1584965873/VizLWHQBJujmBen6dwJEsPmq.jpg",
+  "https://res.cloudinary.com/dbqegklxb/image/upload/v1584965861/YPnLY9byFcUbfzG9ueeJh2Rx.jpg",
+  "https://res.cloudinary.com/dbqegklxb/image/upload/v1584965837/fUCeFZa7eWak8hVDGAfKzuyZ.jpg",
+  "https://res.cloudinary.com/dbqegklxb/image/upload/v1584965844/LvQer698bSG1ZwTj1f8QFnA8.jpg",
+  "https://res.cloudinary.com/dbqegklxb/image/upload/v1583010772/ZbKAbjj7A2yGm65o5jRcLcnA.jpg",
+  "https://res.cloudinary.com/dbqegklxb/image/upload/v1584965818/AzCLVqhqtqPVez5k8T2b3exe.jpg",
+  "https://res.cloudinary.com/dbqegklxb/image/upload/v1584965853/C1AxUfSdr5zKiHb6KTXVQx9U.jpg",
+  "https://res.cloudinary.com/dbqegklxb/image/upload/v1584965870/FvRU6sG4jPMw68AfV79ncWSF.jpg",
+  "https://res.cloudinary.com/dbqegklxb/image/upload/v1584965849/7FAwYk4CZK3JrLRhegKEdLTB.jpg",
+  "https://res.cloudinary.com/dbqegklxb/image/upload/v1584965828/thKRcXtTePq46d3tF8emSUhM.jpg",
+  "https://res.cloudinary.com/dbqegklxb/image/upload/v1582929318/RwK6SwTmvEHvo45gBycg7oUo.jpg"
 ]
 
 addresses = [
