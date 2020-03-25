@@ -1,4 +1,5 @@
 require 'faker'
+require 'open-uri'
 
 Car.destroy_all
 
