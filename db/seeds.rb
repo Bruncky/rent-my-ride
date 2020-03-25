@@ -1,25 +1,26 @@
 require 'faker'
+require 'nokogiri'
 require 'open-uri'
 
 Car.destroy_all
 
 pics = [
-  "https://res.cloudinary.com/dbqegklxb/image/upload/v1584965878/WpPpnZMTF9QqFzRWhKhaky5i.jpg",
-  "https://res.cloudinary.com/dbqegklxb/image/upload/v1584965873/VizLWHQBJujmBen6dwJEsPmq.jpg",
-  "https://res.cloudinary.com/dbqegklxb/image/upload/v1584965861/YPnLY9byFcUbfzG9ueeJh2Rx.jpg",
-  "https://res.cloudinary.com/dbqegklxb/image/upload/v1584965837/fUCeFZa7eWak8hVDGAfKzuyZ.jpg",
-  "https://res.cloudinary.com/dbqegklxb/image/upload/v1584965844/LvQer698bSG1ZwTj1f8QFnA8.jpg",
-  "https://res.cloudinary.com/dbqegklxb/image/upload/v1583010772/ZbKAbjj7A2yGm65o5jRcLcnA.jpg",
-  "https://res.cloudinary.com/dbqegklxb/image/upload/v1584965818/AzCLVqhqtqPVez5k8T2b3exe.jpg",
-  "https://res.cloudinary.com/dbqegklxb/image/upload/v1584965853/C1AxUfSdr5zKiHb6KTXVQx9U.jpg",
-  "https://res.cloudinary.com/dbqegklxb/image/upload/v1584965870/FvRU6sG4jPMw68AfV79ncWSF.jpg",
-  "https://res.cloudinary.com/dbqegklxb/image/upload/v1584965849/7FAwYk4CZK3JrLRhegKEdLTB.jpg",
-  "https://res.cloudinary.com/dbqegklxb/image/upload/v1584965828/thKRcXtTePq46d3tF8emSUhM.jpg",
-  "https://res.cloudinary.com/dbqegklxb/image/upload/v1582929318/RwK6SwTmvEHvo45gBycg7oUo.jpg",
-  "https://res.cloudinary.com/dbqegklxb/image/upload/v1585137339/photo-1565985975612-3a33aa67353f_oqhq6g.jpg",
-  "https://res.cloudinary.com/dbqegklxb/image/upload/v1585137339/photo-1565346015502-bee2b63e735b_jyudem.jpg",
-  "https://res.cloudinary.com/dbqegklxb/image/upload/v1585137339/photo-1565294678301-bd57e84c7337_lvlbuu.jpg",
-  "https://res.cloudinary.com/dbqegklxb/image/upload/v1585137339/photo-1566218246201-db22c11310ad_hyvz3l.jpg"
+  "https://res.cloudinary.com/dbqegklxb/image/upload/v1585144793/car12_fcwrki.jpg",
+  "https://res.cloudinary.com/dbqegklxb/image/upload/v1585144793/car7_vouiuf.jpg",
+  "https://res.cloudinary.com/dbqegklxb/image/upload/v1585144793/car10_rduo0g.jpg",
+  "https://res.cloudinary.com/dbqegklxb/image/upload/v1585144792/car16_kljaya.jpg",
+  "https://res.cloudinary.com/dbqegklxb/image/upload/v1585144791/car15_pafxk7.jpg",
+  "https://res.cloudinary.com/dbqegklxb/image/upload/v1585144792/car14_ox0f3l.jpg",
+  "https://res.cloudinary.com/dbqegklxb/image/upload/v1585144791/car11_yt2r0d.jpg",
+  "https://res.cloudinary.com/dbqegklxb/image/upload/v1585144791/car13_tgrnkw.jpg",
+  "https://res.cloudinary.com/dbqegklxb/image/upload/v1585144790/car8_v3ykyi.jpg",
+  "https://res.cloudinary.com/dbqegklxb/image/upload/v1585144790/car9_bkl3dj.jpg",
+  "https://res.cloudinary.com/dbqegklxb/image/upload/v1585144790/car5_remcma.jpg",
+  "https://res.cloudinary.com/dbqegklxb/image/upload/v1585144790/car4_nuwres.jpg",
+  "https://res.cloudinary.com/dbqegklxb/image/upload/v1585144790/car6_kxx8hv.jpg",
+  "https://res.cloudinary.com/dbqegklxb/image/upload/v1585144790/car3_lodah6.jpg",
+  "https://res.cloudinary.com/dbqegklxb/image/upload/v1585144790/car1_dfje7q.jpg",
+  "https://res.cloudinary.com/dbqegklxb/image/upload/v1585144789/car2_sds9rx.jpg"
 ]
 
 addresses = [
@@ -56,6 +57,7 @@ i = 0
     zip: Faker::Address.zip
   })
 
+
   car = Car.new({
     model: Faker::Company.name,
     description: Faker::Vehicle.standard_specs,
@@ -66,9 +68,9 @@ i = 0
 
   car.user = user
 
-  file = URI.open(pics[i])
+  file = URI.open('https://images.unsplash.com/photo-1565346015502-bee2b63e735b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1814&q=80')
 
-  car.thumbnail.attach(io: file, filename: 'car.jpeg', content_type: 'image/jpg')
+  car.thumbnail.attach(io: file, filename: 'car.jpg', content_type: 'image/jpg')
 
   car.save!
 
