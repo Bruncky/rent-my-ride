@@ -1,6 +1,6 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <%= link_to root_path, class: "navbar-brand" do %>
-    <%= image_tag "https://res.cloudinary.com/dbqegklxb/image/upload/v1582629687/navlogo_fvms1n.png" %>
+    <%= image_tag "favicon.png" %>
     <% end %>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -15,7 +15,7 @@
           <%= link_to "My Rentals", user_path(current_user), class: "dropdown-item" %>
           <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           <%= link_to user_path(current_user) do %>
-            <%= image_tag "https://res.cloudinary.com/dbqegklxb/image/upload/v1582654793/yNhccg5Y5e8PXX4ySaX8hahk.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': true %>
+            <%= image_tag "https://res.cloudinary.com/dbqegklxb/image/upload/v1584964262/Website%20Assets/Avatar_lw_tdpopf.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': true %>
           <% end %>
           </div>
       <% else %>

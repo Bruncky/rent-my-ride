@@ -1,18 +1,26 @@
 require 'faker'
+require 'nokogiri'
+require 'open-uri'
+
+Car.destroy_all
 
 pics = [
-  "https://res.cloudinary.com/dbqegklxb/image/upload/v1582716953/7CfzycbUaRbfLWEaUxef5gtj.jpg",
-  "https://res.cloudinary.com/dbqegklxb/image/upload/v1582716950/phu6H9bDRdbAhmXPFgnCbBTY.jpg",
-  "https://res.cloudinary.com/dbqegklxb/image/upload/v1582716947/fA9zj1HFyboq9iDjwM1FTnec.jpg",
-  "https://res.cloudinary.com/dbqegklxb/image/upload/v1582716944/ZiCs4sWsadmCn8F89kAxZAkW.jpg",
-  "https://res.cloudinary.com/dbqegklxb/image/upload/v1582716940/2WYYBv169EREP5Yw5QBZbAmy.jpg",
-  "https://res.cloudinary.com/dbqegklxb/image/upload/v1582716937/qohLigvSrBNKT89BkeaTDp4x.jpg",
-  "https://res.cloudinary.com/dbqegklxb/image/upload/v1582716935/fpcryuFCnM6xs9bsYpfthSYY.jpg",
-  "https://res.cloudinary.com/dbqegklxb/image/upload/v1582716933/9SMBQiGHFieppkM2UHJYhFVi.jpg",
-  "https://res.cloudinary.com/dbqegklxb/image/upload/v1582716930/VUoFCutjkJFS7G5c38ngMXki.jpg",
-  "https://res.cloudinary.com/dbqegklxb/image/upload/v1582716928/dmBRo9qJe2ZbeCQ2WTnVNFd2.jpg",
-  "https://images.unsplash.com/photo-1565520651265-1148c3b277f4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80",
-  "https://images.unsplash.com/photo-1563831816793-3d32d7cc07d3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80"
+  "https://res.cloudinary.com/dbqegklxb/image/upload/v1585144793/car12_fcwrki.jpg",
+  "https://res.cloudinary.com/dbqegklxb/image/upload/v1585144793/car7_vouiuf.jpg",
+  "https://res.cloudinary.com/dbqegklxb/image/upload/v1585144793/car10_rduo0g.jpg",
+  "https://res.cloudinary.com/dbqegklxb/image/upload/v1585144792/car16_kljaya.jpg",
+  "https://res.cloudinary.com/dbqegklxb/image/upload/v1585144791/car15_pafxk7.jpg",
+  "https://res.cloudinary.com/dbqegklxb/image/upload/v1585144792/car14_ox0f3l.jpg",
+  "https://res.cloudinary.com/dbqegklxb/image/upload/v1585144791/car11_yt2r0d.jpg",
+  "https://res.cloudinary.com/dbqegklxb/image/upload/v1585144791/car13_tgrnkw.jpg",
+  "https://res.cloudinary.com/dbqegklxb/image/upload/v1585144790/car8_v3ykyi.jpg",
+  "https://res.cloudinary.com/dbqegklxb/image/upload/v1585144790/car9_bkl3dj.jpg",
+  "https://res.cloudinary.com/dbqegklxb/image/upload/v1585144790/car5_remcma.jpg",
+  "https://res.cloudinary.com/dbqegklxb/image/upload/v1585144790/car4_nuwres.jpg",
+  "https://res.cloudinary.com/dbqegklxb/image/upload/v1585144790/car6_kxx8hv.jpg",
+  "https://res.cloudinary.com/dbqegklxb/image/upload/v1585144790/car3_lodah6.jpg",
+  "https://res.cloudinary.com/dbqegklxb/image/upload/v1585144790/car1_dfje7q.jpg",
+  "https://res.cloudinary.com/dbqegklxb/image/upload/v1585144789/car2_sds9rx.jpg"
 ]
 
 addresses = [
@@ -27,12 +35,16 @@ addresses = [
   "Friedrichstrasse 10 Berlin",
   "Friedrichstrasse 70 Berlin",
   "Krausenstrasse 50 Berlin",
-  "Friedrichstrasse 47 Berlin"
+  "Friedrichstrasse 47 Berlin",
+  "Leipziger strasse 43, Berlin",
+  "Invalidenstrasse 10, Berlin",
+  "Krausenstrasse 26, Berlin",
+  "Kastanienallee 36a, Berlin"
 ]
 
 i = 0
 
-12.times do
+16.times do
 
 
   user = User.create!({
@@ -45,19 +57,20 @@ i = 0
     zip: Faker::Address.zip
   })
 
+
   car = Car.new({
     model: Faker::Company.name,
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    description: Faker::Vehicle.standard_specs,
     location: addresses[i],
     price: Faker::Commerce.price(range: 10.0..200.0),
-    horsepower: Faker::Number.between(from: 50, to: 500),
+    horsepower: Faker::Number.between(from: 50, to: 500)
   })
 
   car.user = user
 
   file = URI.open(pics[i])
 
-  car.thumbnail.attach(io: file, filename: 'car.jpeg', content_type: 'image/jpg')
+  car.thumbnail.attach(io: file, filename: 'car.jpg', content_type: 'image/jpg')
 
   car.save!
 
@@ -65,42 +78,42 @@ i = 0
 
 end
 
-User.create!({
-  email: "brunobrunckhorst@gmail.com",
-  password: "DsRSu90wAD287$",
-  name: "Bruno Brunckhorst",
-  age: "2/12/1993",
-  address: "Hafenplatz 5",
-  city: "Berlin",
-  zip: "10963"
-})
+# User.create!({
+#   email: "brunobrunckhorst@gmail.com",
+#   password: "DsRSu90wAD287$",
+#   name: "Bruno Brunckhorst",
+#   age: "2/12/1993",
+#   address: "Hafenplatz 5",
+#   city: "Berlin",
+#   zip: "10963"
+# })
 
-User.create!({
-  email: "tim@gmail.com",
-  password: "123456",
-  name: "Tim",
-  age: "1/1/1998",
-  address: "Timstrasse 1",
-  city: "Berlin",
-  zip: "10963"
-})
+# User.create!({
+#   email: "tim@gmail.com",
+#   password: "123456",
+#   name: "Tim",
+#   age: "1/1/1998",
+#   address: "Timstrasse 1",
+#   city: "Berlin",
+#   zip: "10963"
+# })
 
-User.create!({
-  email: "patrick@gmail.com",
-  password: "123456",
-  name: "Patrick",
-  age: "1/1/1986",
-  address: "Patrickstrasse 1",
-  city: "Berlin",
-  zip: "10963"
-})
+# User.create!({
+#   email: "patrick@gmail.com",
+#   password: "123456",
+#   name: "Patrick",
+#   age: "1/1/1986",
+#   address: "Patrickstrasse 1",
+#   city: "Berlin",
+#   zip: "10963"
+# })
 
-User.create!({
-  email: "finn@gmail.com",
-  password: "123456",
-  name: "Finn",
-  age: "1/1/1995",
-  address: "Finnstrasse 1",
-  city: "Berlin",
-  zip: "10963"
-})
+# User.create!({
+#   email: "finn@gmail.com",
+#   password: "123456",
+#   name: "Finn",
+#   age: "1/1/1995",
+#   address: "Finnstrasse 1",
+#   city: "Berlin",
+#   zip: "10963"
+# })
